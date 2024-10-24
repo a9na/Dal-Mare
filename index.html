@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apartments Dal Mare - Grebaštica - Breathtaking Sea View</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> <!-- Local styles if needed -->
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="relative bg-cover bg-center h-96" style="background-image: url('images/hero-background.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <nav class="relative container mx-auto flex justify-between items-center p-4">
+            <ul class="flex space-x-4">
+                <li><a class="text-white hover:underline" href="#">Home</a></li>
+                <li><a class="text-white hover:underline" href="#">About</a></li>
+                <li><a class="text-white hover:underline" href="#">Contact</a></li>
+                <li><a class="text-white hover:underline" href="#">Booking</a></li>
+            </ul>
+        </nav>
+        <div class="relative container mx-auto text-white text-center mt-32">
+            <h1 class="text-5xl font-bold">Apartments Dal Mare</h1>
+            <p class="mt-4 text-lg">Beautiful nature, modern apartments, and an unforgettable experience.</p>
+            <p class="mt-4 text-lg">Experience THe heart of Dalmatia</p>
+        </div>
+    </header>
+
+    <!-- Apartments Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Naši Apartmani</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!--  <?php
+                include('includes/db.php');
+                $query = $db->query("SELECT * FROM apartments");
+                while ($row = $query->fetch()) {
+                    echo '<div class="bg-white shadow-md rounded-lg overflow-hidden">';
+                    echo '<img class="w-full h-48 object-cover" src="images/' . $row['image'] . '" alt="' . $row['name'] . '">';
+                    echo '<div class="p-4">';
+                    echo '<h3 class="text-xl font-semibold">' . $row['name'] . '</h3>';
+                    echo '<p class="mt-2 text-gray-600">' . $row['description'] . '</p>';
+                    echo '<p class="mt-4 text-lg font-bold">Cijena: ' . $row['price'] . '€ po noći</p>';
+                    echo '<a href="booking.php" class="mt-4 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Rezerviraj Sada</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>  -->    
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto text-center text-white">
+            <p>&copy; 2024 Apartments Dal Mare. Sva prava zadržana.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
