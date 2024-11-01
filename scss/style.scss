@@ -1,0 +1,97 @@
+/* Variables */
+$overlay-color: rgba(0, 0, 0, 0.5); // Adjustable overlay color
+$primary-color: #1e40af; // Tailwind's blue-800
+$secondary-color: #1f2937; // Tailwind's gray-800
+
+/* Hero Section */
+header {
+    .overlay {
+        background-color: $overlay-color;
+    }
+
+    .hero-text {
+        font-size: 2rem;
+        font-weight: bold;
+
+        @media (min-width: 768px) {
+            font-size: 3rem;
+        }
+    }
+
+    .hero-image {
+        object-fit: cover;
+        width: 100%;
+        height: 24rem; // Matches h-96 for hero section
+    }
+}
+
+/* Navigation Bar */
+nav {
+    ul {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            @apply text-white hover:underline;
+        }
+    }
+}
+
+/* Custom Button Style */
+.custom-button {
+    @apply bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600;
+}
+
+/* Apartment Cards */
+.card {
+    @apply bg-white shadow-md rounded-lg overflow-hidden;
+
+    img {
+        width: 100%;
+        height: 12rem; // Matches h-48 for apartment images
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 1rem;
+
+        h3 {
+            @apply text-xl font-semibold;
+        }
+
+        p {
+            &.description {
+                @apply mt-2 text-gray-600;
+            }
+
+            &.price {
+                @apply mt-4 text-lg font-bold;
+            }
+        }
+
+        .reserve-button {
+            @extend .custom-button;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+    }
+}
+
+/* Footer */
+footer {
+    background-color: $secondary-color;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .hero-text {
+        font-size: 3rem;
+    }
+}
