@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apartments Dal Mare - Grebaštica - Breathtaking Sea View</title>
+    <title>Apartmani Dal Mare - Grebaštica - Predivan pogled na more</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/reservations.js"></script>
@@ -15,107 +15,125 @@
         <nav class="relative container mx-auto flex justify-between items-center p-4">
             <div class="flex items-center">
                 <img src="images/logo.jpeg" alt="Logo" class="h-10 mr-4">
-                <span class="text-white text-2xl font-bold">Apartments Dal Mare</span>
+                <span class="text-white text-2xl font-bold hidden md:inline">Apartmani Dal Mare</span>
             </div>
-            <ul class="flex space-x-4">
-                <li><a class="text-white hover:underline" href="index.html">Home</a></li>
-                <li><a class="text-white hover:underline" href="about.html">About</a></li>
-                <li><a class="text-white hover:underline" href="contact.html">Contact</a></li>
-                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="loginButton">Login</a></li>
-                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="signupButton">Signup</a></li>
+            <button class="text-white md:hidden" id="mobileMenuButton">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="mobileNavLinks" class="md:hidden absolute inset-x-0 top-16 bg-gray-900 text-white flex-col space-y-4 p-4 hidden">
+                <li><a href="index.html" class="hover:underline">Naslovna</a></li>
+                <li><a href="about.html" class="hover:underline">O nama</a></li>
+                <li><a href="contact.html" class="hover:underline">Kontakt</a></li>
+                <li><a id="loginButtonMobile" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Prijavi se</a></li>
+                <li><a id="signupButtonMobile" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Registriraj se</a></li>
+            </ul>
+            <ul id="navLinks" class="hidden md:flex space-x-4">
+                <li><a class="text-white hover:underline" href="index.html">Naslovna</a></li>
+                <li><a class="text-white hover:underline" href="about.html">O nama</a></li>
+                <li><a class="text-white hover:underline" href="contact.html">Kontakt</a></li>
+                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="loginButton">Prijavi se</a></li>
+                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="signupButton">Registriraj se</a></li>
             </ul>
         </nav>
-        <div class="relative container mx-auto text-white text-center mt-32">
-            <h1 class="text-5xl font-bold">Apartments Dal Mare</h1>
-            <p class="mt-4 text-lg">Beautiful nature, modern apartments, and an unforgettable experience.</p>
-            <p class="mt-4 text-lg">Experience The heart of Dalmatia.</p>
+        <div class="relative container mx-auto text-white text-center mt-24 md:mt-32 px-4 hidden md:block">
+            <h1 class="text-5xl font-bold">Apartmani Dal Mare</h1>
+            <p class="mt-4 text-lg">Prekrasna priroda, apartmani modernog izgleda, i nezaboravno iskustvo.</p>
+            <p class="mt-4 text-lg">Iskusi srce Dalmacije.</p>
         </div>
     </header>
+    
 
-    <section class="bg-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-semibold text-gray-800 mb-6">Welcome to Dalmatia</h2>
-            <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                Nestled along the sparkling Adriatic Sea, Dalmatia is a land of breathtaking landscapes,
-                vibrant culture, and rich history. From the rugged coastlines and turquoise waters
-                to the historic towns and welcoming locals, every corner of Dalmatia promises an unforgettable experience.
-            </p>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                Discover the beauty of traditional stone villages, the aroma of Mediterranean herbs,
-                and the warmth of the sun. Whether you’re seeking relaxation by the sea or exploring ancient sites,
-                Dalmatia offers something for every traveler. Come and be enchanted by the heart of the Adriatic.
-            </p>
-        </div>
-        <div class="flex justify-center">
-            <img src="images/yacht.jpeg" alt="Scenic view of Grebaštica"
-                 class="w-full md:w-3/4 lg:w-2/3 h-auto mt-8">
-        </div>
-    </section>    
-
-    <!-- Apartments Section -->
-    <section class="py-16 flex-grow">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8">Our Apartments</h2>
-            <div id="apartmentContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Apartments will be displayed here via JavaScript -->
+    <main class="flex-grow">
+        <section class="bg-white py-8 md:py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 md:mb-6">Dobrodošli u Dalmaciju</h2>
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-2 md:mb-4">
+                    Smještena uz sjajni Jadranski more, Dalmacija je zemlja zadivljujućih krajolika, vibrantne kulture i bogate povijesti. 
+                    Od stjenovitih obala i tirkiznih voda do povijesnih gradova i ljubaznih domaćina, svaki kutak Dalmacije obećava nezaboravno iskustvo.
+                </p>
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+                    Otkrijte ljepotu tradicionalnih kamenih sela, miris mediteranskih biljaka i toplinu sunca. 
+                    Bilo da tražite opuštanje uz more ili istraživanje drevnih lokaliteta, Dalmacija nudi nešto za svakog putnika. 
+                    Dođite i budite očarani srcem Jadrana.
+                </p>
             </div>
-        </div>
-    </section>
+            <div class="flex justify-center mt-4 md:mt-8 px-4">
+                <img src="images/yacht.jpeg" alt="Scenic view of Grebaštica"
+                     class="w-full md:w-3/4 lg:w-2/3 h-auto">
+            </div>
+        </section>    
 
-    <!-- Footer -->
+        <section class="py-8 md:py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Naši apartmani</h2>
+                <div id="apartmentContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="bg-gray-800 py-4">
         <div class="container mx-auto text-center text-white">
-            <p>&copy; 2024 Apartments Dal Mare. All rights reserved.</p>
+            <p>&copy; 2024 Apartmani Dal Mare. Sva prava zadržana.</p>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div id="loginModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
-        <div class="flex justify-center items-center h-screen">
-            <div class="bg-white rounded-lg p-6 w-1/3">
-                <h2 class="text-xl mb-4">Login</h2>
-                <form id="loginForm">
-                    <div>
-                        <label for="loginUsername" class="block mb-2">Username</label>
-                        <input type="text" id="loginUsername" required class="border p-2 w-full">
-                    </div>
-                    <div class="mt-4">
-                        <label for="loginPassword" class="block mb-2">Password</label>
-                        <input type="password" id="loginPassword" required class="border p-2 w-full">
-                    </div>
-                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Login</button>
-                </form>
-                <button onclick="document.getElementById('loginModal').classList.add('hidden');" class="mt-4 text-gray-500">Close</button>
+        <div id="loginModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
+            <div class="flex justify-center items-center h-screen">
+                <div class="bg-white rounded-lg p-6 w-1/3">
+                    <h2 class="text-xl mb-4">Prijavi se</h2>
+                    <form id="loginForm">
+                        <div>
+                            <label for="loginUsername" class="block mb-2">Korisničko ime</label>
+                            <input type="text" id="loginUsername" required class="border p-2 w-full">
+                        </div>
+                        <div class="mt-4">
+                            <label for="loginPassword" class="block mb-2">Lozinka</label>
+                            <input type="password" id="loginPassword" required class="border p-2 w-full">
+                        </div>
+                        <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Prijavi se</button>
+                    </form>
+                    <button onclick="document.getElementById('loginModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div id="signupModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
-        <div class="flex justify-center items-center h-screen">
-            <div class="bg-white rounded-lg p-6 w-1/3">
-                <h2 class="text-xl mb-4">Signup</h2>
-                <form id="signupForm">
-                    <div>
-                        <label for="signupUsername" class="block mb-2">Username</label>
-                        <input type="text" id="signupUsername" required class="border p-2 w-full">
-                    </div>
-                    <div class="mt-4">
-                        <label for="signupEmail" class="block mb-2">Email</label>
-                        <input type="email" id="signupEmail" required class="border p-2 w-full">
-                    </div>
-                    <div class="mt-4">
-                        <label for="signupPassword" class="block mb-2">Password</label>
-                        <input type="password" id="signupPassword" required class="border p-2 w-full">
-                    </div>
-                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Signup</button>
-                </form>
-                <button onclick="document.getElementById('signupModal').classList.add('hidden');" class="mt-4 text-gray-500">Close</button>
+    
+        <div id="signupModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
+            <div class="flex justify-center items-center h-screen">
+                <div class="bg-white rounded-lg p-6 w-1/3">
+                    <h2 class="text-xl mb-4">Registriraj se</h2>
+                    <form id="signupForm">
+                        <div>
+                            <label for="signupUsername" class="block mb-2">Korisničko ime</label>
+                            <input type="text" id="signupUsername" required class="border p-2 w-full">
+                        </div>
+                        <div class="mt-4">
+                            <label for="signupEmail" class="block mb-2">Email</label>
+                            <input type="email" id="signupEmail" required class="border p-2 w-full">
+                        </div>
+                        <div class="mt-4">
+                            <label for="signupPassword" class="block mb-2">Lozinka</label>
+                            <input type="password" id="signupPassword" required class="border p-2 w-full">
+                        </div>
+                        <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Registiraj se</button>
+                    </form>
+                    <button onclick="document.getElementById('signupModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button>
+                </div>
             </div>
         </div>
-    </div>
 
     <script>
+
+
+        const mobileMenuButton = document.getElementById("mobileMenuButton");
+        const mobileNavLinks = document.getElementById("mobileNavLinks");
+
+        mobileMenuButton.onclick = () => {
+            mobileNavLinks.classList.toggle("hidden");
+        };
+   
         document.getElementById('loginButton').onclick = function() {
             document.getElementById('loginModal').classList.remove('hidden');
         };
@@ -124,7 +142,6 @@
             document.getElementById('signupModal').classList.remove('hidden');
         };
 
-        // Handle login form submission
         document.getElementById('loginForm').onsubmit = async function(e) {
             e.preventDefault();
             const username = document.getElementById('loginUsername').value;
@@ -139,13 +156,11 @@
             const result = await response.json();
             if (result.success) {
                 alert('Login successful!');
-                // Redirect or perform further actions
             } else {
                 alert('Login failed: ' + result.message);
             }
         };
 
-        // Handle signup form submission
         document.getElementById('signupForm').onsubmit = async function(e) {
             e.preventDefault();
             const username = document.getElementById('signupUsername').value;
@@ -161,13 +176,11 @@
             const result = await response.json();
             if (result.success) {
                 alert('Signup successful!');
-                // Redirect or perform further actions
             } else {
                 alert('Signup failed: ' + result.message);
             }
         };
 
-        // Fetch apartments from the server
         document.addEventListener("DOMContentLoaded", function() {
             fetch('getApartments.php')
                 .then(response => response.json())
