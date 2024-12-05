@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Apartments Dal Mare</title>
+    <title>Kontaktirajte nas - Apartmani Dal Mare</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
     <header class="bg-blue-500 text-white py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Apartments Dal Mare</h1>
+            <h1 class="text-2xl font-bold">Apartmani Dal Mare</h1>
             <nav>
-                <a href="index.html" class="text-white hover:underline px-3">Home</a>
-                <a href="about.html" class="text-white hover:underline px-3">About</a>
+                <a href="index.html" class="text-white hover:underline px-3">Naslovna</a>
+                <a href="about.html" class="text-white hover:underline px-3">O nama</a>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto px-4 py-16 flex-grow">
-        <h2 class="text-4xl font-semibold text-center mb-8">Contact Us</h2>
-        <p class="text-lg text-gray-700 text-center mb-6">Have questions? Reach out to us!</p>
+        <h2 class="text-4xl font-semibold text-center mb-8">Kontaktirajte nas</h2>
+        <p class="text-lg text-gray-700 text-center mb-6">Imate pitanja? Javite nam se!</p>
         
         <form action="contact_process.php" method="post" class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
             <div class="mb-4">
-                <label class="block text-gray-700 mb-2" for="name">Name</label>
+                <label class="block text-gray-700 mb-2" for="name">Ime i prezime</label>
                 <input type="text" name="name" id="name" required class="border p-2 w-full">
             </div>
             <div class="mb-4">
@@ -32,10 +32,10 @@
                 <input type="email" name="email" id="email" required class="border p-2 w-full">
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 mb-2" for="message">Message</label>
+                <label class="block text-gray-700 mb-2" for="message">Poruka</label>
                 <textarea name="message" id="message" rows="5" required class="border p-2 w-full"></textarea>
             </div>
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Send Message</button>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Pošalji poruku</button>
         </form>
     </main>
 

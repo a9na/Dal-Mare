@@ -46,7 +46,6 @@ async function reserve(startDate, endDate, apartment_id, user_id) {
         }
     }
 
-    // Save the reservation in the database
     const response = await fetch('createReservation.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
