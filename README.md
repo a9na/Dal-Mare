@@ -23,7 +23,6 @@ To run **Dal-Mare** locally on your machine, follow these steps:
    ```bash
    git clone https://github.com/yourusername/dal-mare.git
 
-
 2. Navigate to the project directory:
 
     ```bash
