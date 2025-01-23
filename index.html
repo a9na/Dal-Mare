@@ -1,53 +1,79 @@
 <!DOCTYPE html>
-<html lang="hr">
+<html lang="hr"> <!-- Specifies the language of the document as Croatian (hr) -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apartmani Dal Mare - Grebaštica - Predivan pogled na more</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script defer src="js/reservations.js"></script>
+    <meta charset="UTF-8"> <!-- Defines the character encoding as UTF-8, which supports most characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    <title>Apartmani Dal Mare - Grebaštica - Predivan pogled na more</title> <!-- Page title shown in the browser tab -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Link to Tailwind CSS for styling -->
+    <script defer src="js/reservations.js"></script> <!-- Defered JavaScript file for handling reservations -->
 </head>
 
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body class="bg-gray-100 flex flex-col min-h-screen"> <!-- Body of the page with a gray background and flexible layout to fill screen height -->
+    <!-- Header Section with Background Image -->
     <header class="relative bg-cover bg-center h-96" style="background-image: url('images/hero-background.jpeg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <nav class="relative container mx-auto flex justify-between items-center p-4">
+        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay to darken the background image for better text visibility -->
+        <nav class="relative container mx-auto flex justify-between items-center p-4"> <!-- Navigation bar with flexbox layout -->
             <div class="flex items-center">
-                <img src="images/logo.jpeg" alt="Logo" class="h-10 mr-4">
-                <span class="text-white text-2xl font-bold hidden md:inline">Apartmani Dal Mare</span>
+                <img src="images/logo.jpeg" alt="Logo" class="h-10 mr-4"> <!-- Website logo with margin -->
+                <span class="text-white text-2xl font-bold hidden md:inline">Apartmani Dal Mare</span> <!-- Title, visible on medium and larger screens -->
             </div>
+            <!-- Mobile Menu Button for Hamburger Icon -->
             <button class="text-white md:hidden" id="mobileMenuButton">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
+
+            <!-- Mobile Navigation Links -->
             <ul id="mobileNavLinks" class="md:hidden absolute inset-x-0 top-16 bg-gray-900 text-white flex-col space-y-4 p-4 hidden">
-                <li><a href="index.html" class="hover:underline">Naslovna</a></li>
-                <li><a href="about.html" class="hover:underline">O nama</a></li>
-                <li><a href="contact.html" class="hover:underline">Kontakt</a></li>
+                <li id="userProfile"></li> <!-- Placeholder for user profile link -->
+                <li><a href="index.html" class="hover:underline">Naslovna</a></li> <!-- Home link -->
+                <li><a href="about.html" class="hover:underline">O nama</a></li> <!-- About link -->
+                <li><a href="contact.html" class="hover:underline">Kontakt</a></li> <!-- Contact link -->
+
+                <!-- Conditional Admin / User Dashboard Links (hidden by default) -->
+                <li><a id="adminButtonMobile" href="admin_dashboard.php" class="bg-blue-500 text-white border border-gray-300 hover:bg-blue-700 py-2 px-4 rounded cursor-pointer hidden">Admin Dashboard</a></li>
+                <li><a id="userButtonMobile" href="user_dashboard.php" class="bg-green-500 text-white border border-gray-300 hover:bg-green-700 py-2 px-4 rounded cursor-pointer hidden">User Dashboard</a></li>
+
+                <!-- Login, Signup, and Logout Buttons for Mobile -->
                 <li><a id="loginButtonMobile" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Prijavi se</a></li>
                 <li><a id="signupButtonMobile" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Registriraj se</a></li>
+                <li><a id="logoutButtonMobile" class="bg-red-500 text-white border border-gray-300 hover:bg-red-700 py-2 px-4 rounded cursor-pointer hidden">Odjavi se</a></li>
             </ul>
+
+            <!-- Desktop Navigation Links -->
             <ul id="navLinks" class="hidden md:flex space-x-4">
-                <li><a class="text-white hover:underline" href="index.html">Naslovna</a></li>
-                <li><a class="text-white hover:underline" href="about.html">O nama</a></li>
-                <li><a class="text-white hover:underline" href="contact.html">Kontakt</a></li>
-                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="loginButton">Prijavi se</a></li>
-                <li><a class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer" id="signupButton">Registriraj se</a></li>
+                <li id="userProfile"></li> <!-- Placeholder for user profile link -->
+                <li><a class="text-white hover:underline" href="index.html">Naslovna</a></li> <!-- Home link -->
+                <li><a class="text-white hover:underline" href="about.html">O nama</a></li> <!-- About link -->
+                <li><a class="text-white hover:underline" href="contact.html">Kontakt</a></li> <!-- Contact link -->
+
+                <!-- Conditional Admin / User Dashboard Links (hidden by default) -->
+                <li><a id="adminButton" href="admin_dashboard.php" class="bg-blue-500 text-white border border-gray-300 hover:bg-blue-700 py-2 px-4 rounded cursor-pointer hidden">Admin Dashboard</a></li>
+                <li><a id="userButton" href="user_dashboard.php" class="bg-green-500 text-white border border-gray-300 hover:bg-green-700 py-2 px-4 rounded cursor-pointer hidden">User Dashboard</a></li>
+
+                <!-- Login, Signup, and Logout Buttons for Desktop -->
+                <li><a id="loginButton" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Prijavi se</a></li>
+                <li><a id="signupButton" class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-200 py-2 px-4 rounded cursor-pointer">Registriraj se</a></li>
+                <li><a id="logoutButton" class="bg-red-500 text-white border border-gray-300 hover:bg-red-700 py-2 px-4 rounded cursor-pointer hidden">Odjavi se</a></li>
             </ul>
         </nav>
+
+        <!-- Hero Section Text (Visible only on larger screens) -->
         <div class="relative container mx-auto text-white text-center mt-24 md:mt-32 px-4 hidden md:block">
-            <h1 class="text-5xl font-bold">Apartmani Dal Mare</h1>
-            <p class="mt-4 text-lg">Prekrasna priroda, apartmani modernog izgleda, i nezaboravno iskustvo.</p>
-            <p class="mt-4 text-lg">Iskusi srce Dalmacije.</p>
+            <h1 class="text-5xl font-bold">Apartmani Dal Mare</h1> <!-- Main heading with large text -->
+            <p class="mt-4 text-lg">Prekrasna priroda, apartmani modernog izgleda, i nezaboravno iskustvo.</p> <!-- Descriptive text about the apartments -->
+            <p class="mt-4 text-lg">Iskusi srce Dalmacije.</p> <!-- Additional tagline text -->
         </div>
     </header>
 
+    <!-- Main Content Section -->
     <main class="flex-grow">
+        <!-- Section about Dalmatia -->
         <section class="bg-white py-8 md:py-16">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 md:mb-6">Dobrodošli u Dalmaciju</h2>
-                <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-2 md:mb-4">
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4 md:mb-6">Dobrodošli u Dalmaciju</h2> <!-- Welcome heading -->
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-2 md:mb-4"> <!-- Introduction to Dalmatia -->
                     Smještena uz sjajno Jadranski more, Dalmacija je zemlja zadivljujućih krajolika, vibrantne kulture i bogate povijesti.
                 </p>
                 <p class="text-base md:text-lg text-gray-600 leading-relaxed">
@@ -55,40 +81,60 @@
                 </p>
             </div>
             <div class="flex justify-center mt-4 md:mt-8 px-4">
-                <img src="images/yacht.jpeg" alt="Scenic view of Grebaštica" class="w-full md:w-3/4 lg:w-2/3 h-auto">
+                <img src="images/yacht.jpeg" alt="Scenic view of Grebaštica" class="w-full md:w-3/4 lg:w-2/3 h-auto"> <!-- Image showcasing the scenic view -->
             </div>
         </section>
 
+        <!-- Weather Section -->
+        <section id="weatherSection" class="bg-white py-8 md:py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Vrijeme</h2> <!-- Weather heading -->
+                <div id="weatherContainer" class="flex justify-center items-center space-x-4">
+                    <div class="text-gray-600">
+                        <p id="temperature" class="text-xl"></p> <!-- Display current temperature -->
+                        <p id="weatherDescription" class="text-lg"></p> <!-- Display weather description -->
+                    </div>
+                    <img id="weatherIcon" src="" alt="Weather Icon" class="w-20 h-20"> <!-- Weather icon -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Apartments Section -->
         <section class="py-8 md:py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Naši apartmani</h2>
-                <div id="apartmentContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"></div>
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">Naši apartmani</h2> <!-- Heading for apartments section -->
+                <div id="apartmentContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"></div> <!-- Grid to display apartments -->
             </div>
         </section>
 
         <!-- Search Bar with Calendar -->
-        <div class="flex justify-center items-center my-6">
-            <form action="index.php" method="GET" class="flex items-center space-x-4">
-                <input type="text" name="search" placeholder="Search Apartments" class="p-2 rounded border border-gray-300">
-                <input type="date" name="checkin_date" class="p-2 rounded border border-gray-300" required>
-                <input type="date" name="checkout_date" class="p-2 rounded border border-gray-300" required>
-                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700">Search</button>
+        <h2 class="flex justify-center items-center my-8">Pregledajte slobodne termine: </h2>
+        <div class="flex justify-center items-center my-6">   
+            <form id="searchForm" method="GET" class="flex items-center space-x-4">
+                <input type="date" id="checkin_date" name="checkin_date" class="p-2 rounded border border-gray-300" required> <!-- Check-in date -->
+                <input type="date" id="checkout_date" name="checkout_date" class="p-2 rounded border border-gray-300" required> <!-- Check-out date -->
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700">Search</button> <!-- Search button -->
             </form>
+        </div>
+
+        <div id="apartmentResults" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Results will be inserted here dynamically -->
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-gray-800 py-4">
         <div class="container mx-auto text-center text-white">
-            <p>&copy; 2024 Apartmani Dal Mare. Sva prava zadržana.</p>
+            <p>&copy; 2024 Apartmani Dal Mare. Sva prava zadržana.</p> <!-- Footer with copyright -->
         </div>
     </footer>
 
-    <!-- Login Modal -->
+    <!-- Login Modal (hidden by default) -->
     <div id="loginModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
         <div class="flex justify-center items-center h-screen">
             <div class="bg-white rounded-lg p-6 w-1/3">
-                <h2 class="text-xl mb-4">Prijavi se</h2>
-                <form id="loginForm">
+                <h2 class="text-xl mb-4">Prijavi se</h2> <!-- Modal title -->
+                <form id="loginForm"> <!-- Login form -->
                     <div>
                         <label for="loginUsername" class="block mb-2">Korisničko ime</label>
                         <input type="text" id="loginUsername" required class="border p-2 w-full">
@@ -97,19 +143,19 @@
                         <label for="loginPassword" class="block mb-2">Lozinka</label>
                         <input type="password" id="loginPassword" required class="border p-2 w-full">
                     </div>
-                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Prijavi se</button>
+                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Prijavi se</button> <!-- Submit login button -->
                 </form>
-                <button onclick="document.getElementById('loginModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button>
+                <button onclick="document.getElementById('loginModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button> <!-- Close button -->
             </div>
         </div>
     </div>
 
-    <!-- Signup Modal -->
+    <!-- Signup Modal (hidden by default) -->
     <div id="signupModal" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-800 bg-opacity-75">
         <div class="flex justify-center items-center h-screen">
             <div class="bg-white rounded-lg p-6 w-1/3">
-                <h2 class="text-xl mb-4">Registriraj se</h2>
-                <form id="signupForm">
+                <h2 class="text-xl mb-4">Registriraj se</h2> <!-- Modal title -->
+                <form id="signupForm"> <!-- Signup form -->
                     <div>
                         <label for="signupUsername" class="block mb-2">Korisničko ime</label>
                         <input type="text" id="signupUsername" required class="border p-2 w-full">
@@ -122,13 +168,16 @@
                         <label for="signupPassword" class="block mb-2">Lozinka</label>
                         <input type="password" id="signupPassword" required class="border p-2 w-full">
                     </div>
-                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Registriraj se</button>
+                    <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded">Registriraj se</button> <!-- Submit signup button -->
                 </form>
-                <button onclick="document.getElementById('signupModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button>
+                <button onclick="document.getElementById('signupModal').classList.add('hidden');" class="mt-4 text-gray-500">Zatvori</button> <!-- Close button -->
             </div>
         </div>
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- JavaScript files -->
+    <script src="js/weather.js"></script> <!-- Weather script -->
+    <script src="js/mobile-menu.js" defer></script> <!-- Mobile menu toggle script -->
+    <script src="js/app.js"></script> <!-- General app functionality script -->
 </body>
 </html>

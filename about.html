@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
+    <!-- Meta tag to set character encoding to UTF-8, supporting various special characters -->
     <meta charset="UTF-8">
+
+    <!-- Meta tag for setting the viewport for responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The title that appears in the browser tab -->
     <title>O nama - Apartmani Dal Mare</title>
+
+    <!-- Link to TailwindCSS for styling the webpage -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
+    <!-- Header section of the page -->
     <header class="bg-blue-500 text-white py-4">
+        <!-- Container for centering the content horizontally -->
         <div class="container mx-auto flex justify-between items-center">
+            <!-- Main title of the website -->
             <h1 class="text-2xl font-bold">Apartmani Dal Mare</h1>
+            <!-- Navigation menu with links -->
             <nav>
+                <!-- Link to the homepage (index.html) -->
                 <a href="index.html" class="text-white hover:underline px-3">Naslovna</a>
+                <!-- Link to the contact page (contact.html) -->
                 <a href="contact.html" class="text-white hover:underline px-3">Kontakt</a>
             </nav>
         </div>
     </header>
 
+    <!-- Main content section of the page -->
     <main class="container mx-auto px-4 py-16 flex-grow text-center">
+        <!-- Page heading -->
         <h2 class="text-4xl font-semibold text-center mb-8">O nama</h2>
+
+        <!-- Paragraph describing the services of the apartments -->
         <p class="text-lg text-gray-700 leading-relaxed mb-4">
             Apartmani Dal Mare vaš su miran bijeg u Grebaštici, prekrasnom gradiću u Dalmaciji.
             Nudimo moderne apartmane s predivnim pogledom i blizinu Jadranskog mora, 
             a posvećeni smo pružanju luksuznog i nezaboravnog boravka.
         </p>
+
+        <!-- Another paragraph providing more details about the location -->
         <p class="text-lg text-gray-700 leading-relaxed mb-8">
             Bilo da ste ovdje kako biste se opustili uz more, 
             istražili povijesne gradove ili uživali u lokalnoj kuhinji, 
             Apartmani Dal Mare savršena su baza za vašu dalmatinsku avanturu.
         </p>
         
+        <!-- Section for displaying an image of the location -->
         <div class="flex justify-center">
             <img src="images/grebastica.jpeg" alt="Scenic view of Grebaštica"
                  class="rounded-lg shadow-lg max-w-full h-auto">
         </div>
     </main>
 
+    <!-- Footer section of the page -->
     <footer class="bg-gray-800 py-4 text-center text-white">
         <div class="container mx-auto">
+            <!-- Copyright text -->
             <p>&copy; 2024 Apartmani Dal Mare. Sva prava zadržana.</p>
         </div>
     </footer>
+
+    <!-- Link to JavaScript file for additional interactivity -->
+    <script src="js/app.js"></script>
 
 </body>
 </html>

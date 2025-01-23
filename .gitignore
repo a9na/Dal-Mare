@@ -43,3 +43,6 @@ npm-debug.log*
 # Compiled files
 /dist
 /build
+
+# Ignore config.php to keep sensitive data out of version control
+config.php
