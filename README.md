@@ -36,8 +36,9 @@ Update the database connection settings:
 Go to includes/db.php and update the database credentials.
 Start your local server:
 
-    ```bash
+   ```bash
     php -S localhost:8000
+```
 
 5. Open the project in your browser at http://localhost:8000.
 
