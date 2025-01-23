@@ -26,7 +26,7 @@ To run **Dal-Mare** locally on your machine, follow these steps:
 
 2. Navigate to the project directory:
 
-    '''bash
+    ```bash
     cd dal-mare
 
 3. Set up your database:
@@ -37,7 +37,7 @@ Update the database connection settings:
 4. Go to includes/db.php and update the database credentials.
 Start your local server:
 
-    '''bash
+    ```bash
     php -S localhost:8000
 
 5. Open the project in your browser at http://localhost:8000.
