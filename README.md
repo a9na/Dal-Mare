@@ -33,7 +33,7 @@ To run **Dal-Mare** locally on your machine, follow these steps:
 Import the database schema from the db_schema.sql file into your MySQL database.
 Update the database connection settings:
 
-4. Go to includes/db.php and update the database credentials.
+Go to includes/db.php and update the database credentials.
 Start your local server:
 
     ```bash
